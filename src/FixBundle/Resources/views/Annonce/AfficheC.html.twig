@@ -1,0 +1,52 @@
+{% extends '@Fix/Client/client.html.twig' %}
+{% block content %}
+   <br>
+    <div id="content-wrapper">
+    <div class="container-fluid">
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class=""></i>
+                Mes Annonces</div>
+            <br>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                        <tr>
+                            <th>Titre</th>
+                            <th>Description</th>
+                            <th>Etat</th>
+                            <th>Date Debut</th>
+                            <th>Date Fin</th>
+                            <th>lieu</th>
+                            <th>Sous Categorie</th>
+                            <th></th>
+                            <th></th>
+                            <th>les propositions</th>
+                        </tr>
+                        {% for i in v %}
+                            <tr>
+
+                                <th>{{ i.Titre }}</th>
+                                <th>{{ i.Description }}</th>
+                                <th>{{ i.Etat }}</th>
+                                <th>{{ i.dateDebut |date }}</th>
+                                <th>{{i.dateFin  |date  }}</th>
+                                <th>{{i.lieu }}</th>
+                                <th>{{i.sousCategorie.Titre }}</th>
+                                <td><a href="{{  path('delete_annonceC',{'id':i.id}) }}" >delete</a></td>
+                                <td><a href="{{  path('modifier_annonceC',{'id':i.id}) }}"><i>edit</i></a></td>
+                                <th><a href="{{  path('affiche_proposition',{}) }}"> les propositions</a> </th>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+{% endblock content %}

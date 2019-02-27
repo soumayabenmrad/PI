@@ -1,0 +1,15 @@
+agenda_homepage:
+    path:     /affich
+    defaults: { _controller: AgendaBundle:Default:affichProgram }
+
+agenda_modifier:
+    path:     /modifier/{id}
+    defaults: { _controller: AgendaBundle:Default:modifierprogram }
+
+agenda_supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: AgendaBundle:Default:supprimerprogram }
+
+agenda_admin:
+    path:     /adminagenda
+    defaults: { _controller: AgendaBundle:Default:adminagenda }

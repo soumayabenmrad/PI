@@ -1,0 +1,18 @@
+agenda:
+    resource: "@AgendaBundle/Resources/config/routing.yml"
+    prefix:   /agenda
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /fixAdmin
+
+fix:
+    resource: "@FixBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

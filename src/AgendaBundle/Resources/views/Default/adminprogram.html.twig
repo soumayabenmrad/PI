@@ -1,0 +1,24 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+    <ul>
+        <li>
+    <h3>Liste de tous les programmes:</h3><br></li>
+
+    {% for i in pr %}
+<br>
+        <li>
+    <fieldset>
+        <legend><h4> Programme de {{ i.date|date('Y-m-d') }}</legend>
+        <h4 color="#000000"> Titre : {{ i.titre }} </h4>
+        <h4 color="#000000">lieu : {{ i.lieu }}</h4>
+        <h4 color="#000000">Description : {{ i.description }}</h4>
+        <h4 color="#000000">Professionnel : {{ i.idagenda.profid.prix }}</h4>
+
+
+
+    </fieldset><br>
+        </li>
+    {% endfor %}
+
+    </ul>
+{% endblock content %}

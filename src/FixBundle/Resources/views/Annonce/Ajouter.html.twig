@@ -1,0 +1,14 @@
+{% extends '@Fix/Client/client.html.twig' %}
+{% block content %}
+
+    <div class="ftco-section bg-light">
+    <div class="col-md-12 col-lg-8 mb-5">
+    <h3> Ajouter une annonce</h3>
+
+{{ form_start(form) }}
+
+    <div class="form-group" hidden="hidden">
+    {{ form_label(form.etat) }}
+        {{ form_widget(form.etat, {'attr': {'class': 'form-control'}}) }}</div>
+{{ form_end(form) }}
+{% endblock content %}

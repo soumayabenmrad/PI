@@ -1,0 +1,20 @@
+{% extends '@Fix/Professionnel/prof.html.twig' %}
+{% block content %}
+    
+    <div class="ftco-section bg-light">
+
+    <h1>Proposition pour l'annonce</h1><h2>{{ annonce.titre }}</h2>
+    <form method="post">
+        <label for="date">Date debut :{{ annonce.datedebut | date}}</label><br><br>
+        <label for="date">Date fin :{{ annonce.datefin | date }}</label><br><br>
+        <label for="description">Description : </label>
+        <input type="text" name="description"/><br><br>
+        <label for="prix">Prix : </label>
+        <input type="number" name="prix" id="1"/><br><br>
+        <button>Proposer</button>
+        <br><br>
+    </form>
+
+    </div>
+
+{% endblock content %}

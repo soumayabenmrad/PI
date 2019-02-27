@@ -1,0 +1,70 @@
+admin_homepage:
+    path:     /
+    defaults: { _controller: AdminBundle:Default:index }
+
+
+Affichage_Categorie:
+    path: /Affiche/
+    defaults: { _controller: AdminBundle:Categorie:AfficheC }
+
+
+Affichage_Annonce:
+    path: /affiche
+    defaults: { _controller: AdminBundle:Annonce:AfficheA }
+
+modifier_categorie:
+    path: /modifier/{id}
+    defaults: { _controller: AdminBundle:Categorie:modifierC }
+
+ajouterC:
+    path: /ajouter/
+    defaults: { _controller: AdminBundle:Categorie:ajout}
+
+delete_categorie:
+    path: /delete/{id}/
+    defaults: { _controller: AdminBundle:Categorie:Delete}
+
+affichage_Sc:
+    path: /AfficheSC/{id}
+    defaults: { _controller: AdminBundle:SousCategorie:AfficheSc }
+
+delete_annonce:
+    path: /delet/{id}/
+    defaults: { _controller: AdminBundle:Annonce:Delete}
+
+recherche_categorie:
+    path: /chercher
+    defaults:  { _controller: AdminBundle:Categorie:chercher }
+
+Affichage_Proposition:
+    path: /afficheProp
+    defaults:  { _controller: AdminBundle:Proposition:affichageP }
+
+ajouterSc:
+    path: /ajouterrSc
+    defaults:  { _controller: AdminBundle:SousCategorie:ajouterrSc }
+
+delete_Scategorie:
+    path: /supprimerSc/{id}/
+    defaults: { _controller: AdminBundle:SousCategorie:Delete}
+
+chartsLine:
+    path: /chartline/
+    defaults: { _controller: AdminBundle:Graphe:chartLine}
+
+
+chartsLineS:
+    path: /chartlineS/
+    defaults: { _controller: AdminBundle:Graphe:chartHistogramme}
+
+Pie:
+    path: /pie/
+    defaults: { _controller: AdminBundle:Graphe:chartPie}
+
+utilisateurs:
+    path: /user/
+    defaults:  { _controller: AdminBundle:Utilisateur:AfficheUser }
+
+admin_compte:
+    path: /usercompte/
+    defaults:  { _controller: AdminBundle:Compte:admin }

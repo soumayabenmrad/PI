@@ -1,0 +1,136 @@
+{% extends 'showpost.html.twig' %}
+{% block head %}
+    <title>Fixit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block menu %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">FixIt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Qui sommes-nous ?</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#blog">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+
+
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ user.username }}
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{  path( 'showprofilcli' ) }}">Profil</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Annonces</a></li>
+                                <li><a href="{{  path( 'showpostclient' ) }}">Actualités</a></li>
+                                <li class="divider"></li>
+                                <li><a href="{{  path( 'logout' ) }}" >Déconnexion</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+{% block image %}
+    <div class="hero-wrap js-fullheight" style="background-image: url('/Fixit/web/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start" data-scrollax-parent="true">
+                <div class="col-md-8 ftco-animate text-center text-md-left mb-5" data-scrollax=" properties: { translateY: '70%' }">
+                    <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-3"><a href="index.html">FixIt <i class="ion-ios-arrow-forward"></i></a></span> <span>Actualités</span></p>
+                    <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Mes commentaires</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    {% for com in commentaires %}
+                        <div class="row mb-2">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <img src="http://eskimo.egemenerd.com/wp-content/uploads/2018/05/product14-600x600.jpg" style="width:100%; margin-top: 10px;">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body">
+                                                    <div class="news-content">
+                                                        <center><h3 class="heading"><a href="#">{{ com.commentaire}}</a></h3></center>
+                                                        <a href="{{ path('updatecommentairecli',{'id':com.id}) }}"><input type="button" value="   Modifier  " class="btn btn-primary"></a>
+                                                        <a href="{{ path('deletecommentaire',{'id':com.id}) }}"><input type="button" value="   Supprimer  " class="btn btn-primary"></a>
+                                                    </div>
+
+                                                    <div class="news-buttons">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+    </section>
+{% endblock %}

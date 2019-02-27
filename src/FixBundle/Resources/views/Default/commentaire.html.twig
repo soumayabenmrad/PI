@@ -1,0 +1,70 @@
+{% extends 'showpost.html.twig' %}
+{% block menu %}
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">FixIt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Qui sommes-nous ?</a></li>
+                    <li class="nav-item"><a href="http://localhost/FixIt/web/app_dev.php/showpostclient" class="nav-link" data-toggle="modal" data-target="#actu">Actualités</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#login" >Connexion</a></li>
+                    <li class="nav-item"><a href="inscription.html" class="nav-link" data-toggle="modal" data-target="#register" >Inscription</a></li>
+                    <li class="nav-item cta cta-colored"><a href="job-post.html" class="nav-link">Publiez votre annonce</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+{% endblock%}
+{% block content %}
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row d-flex">
+                {% for post in postes %}
+                    <div class="col-md-3 d-flex ftco-animate">
+                        <div class="blog-entry align-self-stretch">
+                            <div class="text mt-3">
+                                <a href="../blog-single.html" class="block-20" style="background-image: url('../images/image_1.jpg');"></a>
+                                <center><h3 class="heading"><a href="#">{{ post.titre }}</a></h3></center>
+                                <center><h3 class="heading"><a href="#">{{ post.description }}</a></h3></center>
+                                <a href="{{ path('addcommentaire',{ 'id': post.id }) }}"><input type="submit" value=" Ajouter un commentaire " class="submit px-3"></a>
+                            {{ post.id }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <center><a href="{{ path('addpostclient')}}"><input type="submit" value="Ajouter un post" class="btn btn-primary py-3 px-5"></a></center>
+
+    </section>
+    <section class="ftco-section-parallax">
+        <div class="parallax-img d-flex align-items-center">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+                        <h2>Subcribe to our Newsletter</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+                        <div class="row d-flex justify-content-center mt-4 mb-4">
+                            <div class="col-md-8">
+                                <form action="#" class="subscribe-form">
+                                    <div class="form-group d-flex">
+                                        <input type="text" class="form-control" placeholder="Enter email address">
+                                        <input type="submit" value="Subscribe" class="submit px-3">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

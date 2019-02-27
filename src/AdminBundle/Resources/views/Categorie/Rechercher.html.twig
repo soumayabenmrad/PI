@@ -1,0 +1,44 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class=""></i>
+               <H6>Liste des Catégories</H6> </div>
+            <br>
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" >
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="chercher une categorie" aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        {% for i in v %}
+                            <tr><td>
+                                    <a href="{{  path('affichage_Sc',{'id':i.id}) }} "> {{ i.Titre }}</a>  <br>
+                                    <img src="{{ asset('images/')}}{{ i.nomImage }}" style="width: 150px;height: 100px"  ><br>
+                                </td>
+                                <td>{{ i.Description}}</td>
+
+                                <td><a href="{{  path('delete_categorie',{'id':i.id}) }}" class="fa fa-trash"></a></td>
+                                <td><a href="{{  path('modifier_categorie',{'id':i.id}) }}" ><i class="fa fa-edit"></i></a></td>
+
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+

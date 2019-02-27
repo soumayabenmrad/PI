@@ -1,0 +1,68 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Actualités</li>
+            </ol>
+
+            <!-- DataTables Example -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Post</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Titre</th>
+                                <th>Description</th>
+                                <th>Catégories</th>
+                                <th>Sous-catégorie</th>
+                                <th>Action</th>
+
+                            </tr>
+                            </thead>
+1
+                            <tbody>
+                            {% for post in postes %}
+
+                            <tr>
+                                <td>{{ post.id }}</td>
+                                <td>{{ post.titre }}</td>
+                                <td>{{ post.description }}</td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="{{ path('deletepostadmin',{'id':post.id}) }}">Supprimer</a></td>
+                            </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright © Your Website 2019</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends '@Fix/Client/client.html.twig' %}
+{% block content %}
+
+<br>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class=""></i>
+                Mes Annonces</div>
+            <br>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                        <tr>
+                            <th>Professionel</th>
+                            <th>Description</th>
+                            <th>Prix</th>
+                         <th></th>
+                        </tr>
+                        {% for v in p %}
+                            <tr>
+                                <th>{{ v.profid.nom }}  {{ v.profid.prenom }}</th>
+                                <th>{{ v.Description }}</th>
+                                <th>{{ v.prix }}TND</th>
+                               <th class="fa-check">affecter</th>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

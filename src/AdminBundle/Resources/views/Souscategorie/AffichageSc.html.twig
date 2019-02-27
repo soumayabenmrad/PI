@@ -1,0 +1,33 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class=""></i>
+               <H6>Liste des sous Catégories</H6> </div>
+            <br>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" border="0" >
+                        <a href="{{  path('ajouterSc',{}) }}" class="fa fa-plus"></a>
+
+                        {% for i in v %}
+                         {{ i.categorie.titre }}
+
+                        <tr>
+                            <td>{{ i.titre }}</td>
+                            <td> <a href="{{  path('delete_Scategorie',{'id':i.id}) }}" class="fa fa-trash"></a></td>
+                        </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+

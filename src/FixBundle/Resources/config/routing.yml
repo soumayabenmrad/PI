@@ -1,0 +1,128 @@
+fix_homepage:
+    path:     /
+    defaults: { _controller: FixBundle:Default:index }
+
+fos_user_registration_register:
+    path:     /register/confirmed
+    defaults: { _controller: FixBundle:Default:register }
+
+fix_admin:
+    path:     /admin
+    defaults: { _controller: AdminBundle:Default:admin }
+
+fix_registerPro:
+    path:     /registerpro
+    defaults: { _controller: FixBundle:Default:registerpro }
+
+fix_registerCli:
+  path:     /registercli
+  defaults: { _controller: FixBundle:Default:registercli }
+
+logout:
+    path: /logout
+
+Ajouter_annonce:
+  path: /ajouterAnn/
+  defaults: { _controller: FixBundle:Annonce:ajouterAn }
+
+afficheAnnonce_client:
+  path: /afficheDQL
+  defaults: { _controller: FixBundle:Annonce:afficherannoncesclient }
+
+delete_annonceC:
+  path: /deleteAn/{id}
+  defaults: { _controller: FixBundle:Annonce:delete }
+
+modifier_annonceC:
+  path: /modifier/{id}
+  defaults: { _controller: FixBundle:Annonce:modifierA }
+
+
+affiche_proposition:
+  path: /afficheP/
+  defaults: { _controller: FixBundle:PropositionC:view }
+
+
+annonce:
+  path: /annonces
+  defaults: { _controller: FixBundle:AnnonceP:view }
+
+
+proposer:
+  path: /proposition1/{id}
+  defaults: { _controller: FixBundle:PropositionC:proposition }
+
+showprofilcli:
+    path:     /showprofilcli
+    defaults: { _controller: FixBundle:Default:showprofilcli }
+
+showprofilprof:
+  path:     /showprofilprof
+  defaults: { _controller: FixBundle:Default:showprofilprof }
+
+showpostclient:
+  path:     /showpostclient
+  defaults: { _controller: FixBundle:Default:showpostclient }
+
+showpostpro:
+  path:     /showpostpro
+  defaults: { _controller: FixBundle:Default:showpostpro }
+
+mypostclient:
+  path:     /mypostclient
+  defaults: { _controller: FixBundle:Default:mypostclient }
+
+addpostclient:
+  path:     /addpostclient
+  defaults: { _controller: FixBundle:Default:addpostclient }
+
+updatepostclient:
+  path:     /updatepostclient/{id}
+  defaults: { _controller: FixBundle:Default:updatepostclient }
+
+deletepostclient:
+  path:     /deletepostclient/{id}
+  defaults: { _controller: FixBundle:Default:deletepostclient }
+
+showpostadmin:
+  path:     /showpostadmin
+  defaults: { _controller: FixBundle:Default:showpostadmin }
+
+deletepostadmin:
+  path:     /deletepostadmin/{id}
+  defaults: { _controller: FixBundle:Default:deletepostadmin }
+
+addcommentaireclient:
+  path:     /addcommentaireclient/{id}
+  defaults: { _controller: FixBundle:Default:addcommentaireclient }
+
+addcommentairepro:
+  path:     /addcommentairepro/{id}
+  defaults: { _controller: FixBundle:Default:addcommentairepro }
+
+showcommentairecli:
+  path:     /showcommentairecli
+  defaults: { _controller: FixBundle:Default:showcommentairecli }
+
+showcommentairepro:
+  path:     /showcommentairepro
+  defaults: { _controller: FixBundle:Default:showcommentairepro }
+
+deletecommentaire:
+  path:     /deletecommentaire/{id}
+  defaults: { _controller: FixBundle:Default:deletecommentaire }
+updatecommentairepro:
+  path:     /updatecommentairepro/{id}
+  defaults: { _controller: FixBundle:Default:updatecommentairepro }
+
+updatecommentairecli:
+  path:     /updatecommentairecli/{id}
+  defaults: { _controller: FixBundle:Default:updatecommentairecli }
+
+voirpluspostclient:
+  path:     /voirpluspostclient/{id}/{titre}/{description}/{categorie}/{souscategorie}
+  defaults: { _controller: FixBundle:Default:voirpluspostclient }
+
+voirpluspostpro:
+  path:     /voirpluspostpro/{id}/{titre}/{description}/{categorie}/{souscategorie}
+  defaults: { _controller: FixBundle:Default:voirpluspostpro }
